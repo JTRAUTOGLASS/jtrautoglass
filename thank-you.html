@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Enquiry Received | JTR Autoglass Inc.</title>
+  <meta name="description" content="Thank you for contacting JTR Autoglass Inc. Your enquiry has been received."/>
+  
+  <!-- Typography & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  
+  <!-- Custom Stylesheet -->
+  <link href="css/styles.css" rel="stylesheet"/>
+
+  <style>
+    .success-icon-wrap {
+      width: 72px;
+      height: 72px;
+      background-color: rgba(21, 128, 61, 0.1);
+      color: var(--color-success);
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px auto 24px auto;
+      animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    .success-icon-wrap span {
+      font-size: 40px;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.6); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- App Wrapper (Mobile Viewport Constrained) -->
+  <div class="app-container">
+
+    <!-- Top Sticky Header -->
+    <header class="app-header">
+      <a class="logo" href="index.html">
+        JTR Autoglass
+      </a>
+      <a class="btn-header-call" href="tel:6477000028">
+        <span class="material-symbols-outlined">phone</span> 647-700-0028
+      </a>
+    </header>
+
+    <main class="content-section" style="text-align: center; display: flex; flex-direction: column; justify-content: center; flex: 1;">
+      
+      <!-- Animated success check icon -->
+      <div class="success-icon-wrap">
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+      </div>
+
+      <h1 style="font-size: 28px; margin-bottom: 12px; color: var(--color-deep-navy);">Message Received!</h1>
+      <p class="text-body-lg" style="color: var(--color-slate-gray); margin-bottom: 24px;">
+        Thank you, <span id="clientName" style="font-weight: 700; color: var(--color-primary);">Valued Customer</span>. Your request has been successfully submitted.
+      </p>
+
+      <!-- Info status card -->
+      <div class="accordion-item" style="border-color: var(--color-success); padding: 20px; text-align: left; margin-bottom: 24px; background-color: #f0fdf4;">
+        <h4 class="text-headline-md" style="font-size: 15px; color: var(--color-success); margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+          <span class="material-symbols-outlined" style="font-size: 18px;">mark_email_read</span> Message Transmitted
+        </h4>
+        <p style="font-size: 13px; color: var(--color-slate-gray); line-height: 1.6;">
+          Your inquiry has been successfully sent. A JTR auto glass representative will review your details and contact you via phone or email shortly.
+        </p>
+      </div>
+
+      <!-- Action checklist for driver -->
+      <div class="accordion-item" style="padding: 20px; text-align: left; margin-bottom: 32px; background-color: var(--color-surface-container);">
+        <h4 class="text-headline-md" style="font-size: 14px; margin-bottom: 12px; color: var(--color-deep-navy);">Next Steps & What to Expect:</h4>
+        <ul class="accordion-bullets" style="margin-top: 0;">
+          <li>
+            <span class="material-symbols-outlined" style="font-size: 16px; color: var(--color-primary);">phone_callback</span> 
+            <span style="font-size: 13px; color: var(--color-slate-gray);">A dispatcher will call or text you within 1 business hour to schedule your session.</span>
+          </li>
+          <li>
+            <span class="material-symbols-outlined" style="font-size: 16px; color: var(--color-primary);">shield</span> 
+            <span style="font-size: 13px; color: var(--color-slate-gray);">If filing an insurance claim, have your policy details handy when we call you.</span>
+          </li>
+        </ul>
+      </div>
+
+      <a class="btn btn-primary" href="index.html">Return to Home</a>
+
+    </main>
+
+    <!-- App Sticky Bottom Footer -->
+    <footer class="app-footer">
+      <h4>JTR Autoglass Inc.</h4>
+      <p>© 2026 JTR Autoglass Inc. All rights reserved.</p>
+    </footer>
+
+    <!-- Sticky Bottom Navigation Tab Bar -->
+    <nav class="app-nav-bar">
+      <a href="index.html" class="nav-item">
+        <span class="material-symbols-outlined">home</span>
+        <span>Home</span>
+      </a>
+      <a href="services.html" class="nav-item">
+        <span class="material-symbols-outlined">build</span>
+        <span>Services</span>
+      </a>
+      <a href="contact.html" class="nav-item">
+        <span class="material-symbols-outlined">contact_phone</span>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+  </div>
+
+  <!-- Script to parse query variables -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      let name = params.get('name') || localStorage.getItem('lastSubmissionName');
+      
+      if (name) {
+        document.getElementById('clientName').textContent = decodeURIComponent(name);
+      }
+    });
+  </script>
+</body>
+</html>

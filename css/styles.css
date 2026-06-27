@@ -755,3 +755,38 @@ h1, h2, h3, h4 {
 body {
   padding-bottom: 76px !important;
 }
+
+/* --- Desktop Responsiveness --- */
+@media (min-width: 768px) {
+  .app-container,
+  .app-nav-bar,
+  .floating-contact-panel {
+    max-width: 100%;
+  }
+
+  /* Make sections flow better on wide screens */
+  .accordion-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    align-items: start;
+  }
+
+  .carousel-slide {
+    flex: 0 0 33.333%;
+  }
+
+  .content-section {
+    padding: 60px 40px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 32px auto;
+  }
+}

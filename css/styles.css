@@ -176,6 +176,10 @@ h1, h2, h3, h4 {
   text-align: center;
   position: relative;
   background: linear-gradient(180deg, rgba(0, 74, 153, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero h1 {
@@ -568,7 +572,7 @@ h1, h2, h3, h4 {
 /* --- Floating Bottom Contact Sheet --- */
 .floating-contact-btn {
   position: fixed;
-  bottom: 20px;
+  bottom: 80px;
   right: 20px;
   width: 56px;
   height: 56px;
